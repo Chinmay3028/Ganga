@@ -1,0 +1,48 @@
+// Custom Exception Class
+class InvalidAgeException extends Exception
+{
+    // Constructor
+    InvalidAgeException(String message)
+    {
+        super(message);
+    }
+}
+
+public class VoterRegistration
+{
+    // Method to register voter
+    static void registerVoter(String name, int age) throws InvalidAgeException
+    {
+        if (age < 18)
+        {
+            throw new InvalidAgeException("Age is less than 18. Not eligible to vote.");
+        }
+        else
+        {
+            System.out.println(name + " is successfully registered for voting.");
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        // Valid age example
+        try
+        {
+            registerVoter("Chinmay", 25);
+        }
+        catch (InvalidAgeException e)
+        {
+            System.out.println("Exception: " + e.getMessage());
+        }
+
+        // Invalid age example
+        try
+        {
+            registerVoter("Rahul", 15);
+        }
+        catch (InvalidAgeException e)
+        {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+}
