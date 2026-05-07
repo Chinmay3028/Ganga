@@ -1,0 +1,48 @@
+class Student
+{
+    // Attributes
+    int rollNo;
+    String name;
+    float marks;
+
+    // Constructor
+    Student(int r, String n, float m)
+    {
+        rollNo = r;
+        name = n;
+        marks = m;
+    }
+
+    // Method to calculate grade
+    char calculateGrade()
+    {
+        if (marks >= 90)
+            return 'A';
+        else if (marks >= 75)
+            return 'B';
+        else if (marks >= 50)
+            return 'C';
+        else
+            return 'F';
+    }
+
+    // Method to display student details
+    void displayDetails()
+    {
+        System.out.println("Student Details");
+        System.out.println("Roll Number : " + rollNo);
+        System.out.println("Name        : " + name);
+        System.out.println("Marks       : " + marks);
+        System.out.println("Grade       : " + calculateGrade());
+    }
+
+    // Main method
+    public static void main(String[] args)
+    {
+        // Creating object using constructor
+        Student s1 = new Student(101, "Chinmay", 88);
+
+        // Display details
+        s1.displayDetails();
+    }
+}
