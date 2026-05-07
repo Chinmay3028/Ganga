@@ -1,0 +1,29 @@
+class Calculator
+{
+    // Method to multiply two integers
+    int multiply(int a, int b)
+    {
+        return a * b;
+    }
+
+    // Overloaded method to multiply two doubles
+    double multiply(double a, double b)
+    {
+        return a * b;
+    }
+
+    // Main method
+    public static void main(String[] args)
+    {
+        Calculator obj = new Calculator();
+
+        // Calling integer method
+        int intResult = obj.multiply(5, 4);
+
+        // Calling double method
+        double doubleResult = obj.multiply(2.5, 3.2);
+
+        System.out.println("Multiplication of integers: " + intResult);
+        System.out.println("Multiplication of doubles : " + doubleResult);
+    }
+}
