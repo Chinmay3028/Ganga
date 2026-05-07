@@ -1,0 +1,25 @@
+
+
+package mypackage;
+
+// Class inside package
+class Message
+{
+    void display()
+    {
+        System.out.println("Welcome to Java Package Demo!");
+    }
+}
+
+// Main class
+public class PackageDemo
+{
+    public static void main(String[] args)
+    {
+        // Creating object of Message class
+        Message obj = new Message();
+
+        // Calling method
+        obj.display();
+    }
+}
