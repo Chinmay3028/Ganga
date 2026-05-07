@@ -1,0 +1,46 @@
+class Employee
+{
+    int empId;
+    String name;
+    double basicSalary;
+
+    // Constructor
+    Employee(int id, String n, double salary)
+    {
+        empId = id;
+        name = n;
+        basicSalary = salary;
+    }
+
+    // Method to calculate total salary
+    double calculateSalary()
+    {
+        double hra = basicSalary * 0.20; // 20% HRA
+        double da = basicSalary * 0.10;  // 10% DA
+
+        return basicSalary + hra + da;
+    }
+
+    // Method to display salary details
+    void displayDetails()
+    {
+        double hra = basicSalary * 0.20;
+        double da = basicSalary * 0.10;
+
+        System.out.println("Employee Details");
+        System.out.println("Employee ID   : " + empId);
+        System.out.println("Employee Name : " + name);
+        System.out.println("Basic Salary  : " + basicSalary);
+        System.out.println("HRA           : " + hra);
+        System.out.println("DA            : " + da);
+        System.out.println("Total Salary  : " + calculateSalary());
+    }
+
+    // Main method
+    public static void main(String[] args)
+    {
+        Employee e1 = new Employee(101, "Chinmay", 50000);
+
+        e1.displayDetails();
+    }
+}
