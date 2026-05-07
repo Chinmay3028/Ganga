@@ -1,0 +1,61 @@
+class CounterThreadA extends Thread
+{
+    // Override run() method
+    public void run()
+    {
+        try
+        {
+            for (int i = 2; i <= 10; i += 2)
+            {
+                System.out.println(getName() + " : " + i);
+
+                // Pause thread for interleaving effect
+                Thread.sleep(500);
+            }
+        }
+        catch (InterruptedException e)
+        {
+            System.out.println(getName() + " interrupted.");
+        }
+    }
+}
+
+class CounterThreadB extends Thread
+{
+    // Override run() method
+    public void run()
+    {
+        try
+        {
+            for (int i = 1; i <= 9; i += 2)
+            {
+                System.out.println(getName() + " : " + i);
+
+                // Pause thread for interleaving effect
+                Thread.sleep(500);
+            }
+        }
+        catch (InterruptedException e)
+        {
+            System.out.println(getName() + " interrupted.");
+        }
+    }
+}
+
+public class ThreadDemo
+{
+    public static void main(String[] args)
+    {
+        // Creating thread objects
+        CounterThreadA t1 = new CounterThreadA();
+        CounterThreadB t2 = new CounterThreadB();
+
+        // Setting thread names
+        t1.setName("EvenThread");
+        t2.setName("OddThread");
+
+        // Starting threads
+        t1.start();
+        t2.start();
+    }
+}
