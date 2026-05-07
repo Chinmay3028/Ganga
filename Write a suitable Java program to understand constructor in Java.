@@ -1,0 +1,29 @@
+class ConstructorDemo
+{
+    int number;
+    String name;
+
+    // Default Constructor
+    ConstructorDemo()
+    {
+        number = 100;
+        name = "Chinmay";
+    }
+
+    // Method to display values
+    void display()
+    {
+        System.out.println("Number : " + number);
+        System.out.println("Name   : " + name);
+    }
+
+    // Main method
+    public static void main(String[] args)
+    {
+        // Object creation
+        ConstructorDemo obj = new ConstructorDemo();
+
+        // Calling method
+        obj.display();
+    }
+}
